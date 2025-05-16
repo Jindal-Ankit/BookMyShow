@@ -6,6 +6,7 @@ import com.ankit.bookmyshow.models.enums.PaymentStatus;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,6 +15,9 @@ import lombok.Setter;
 @Entity
 public class Payment extends BaseModel {
     private double amount;
+
+    @ManyToOne
+    private Booking booking;
 
     @Enumerated(EnumType.STRING)
     private PaymentMode paymentMode;

@@ -19,7 +19,7 @@ public class Booking extends BaseModel{
 
     private BookingStatus bookingStatus;
 
-    @OneToMany
+    @OneToMany(mappedBy = "booking")
     private List<Payment> payments;
     private double amount;
 
